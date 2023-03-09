@@ -1,6 +1,6 @@
 # **Projeto React e API's**
 
-![nomeDaImagem](./caminhoDaImagem/assets)
+![Pokedex](./pokedex-project/src/assets/image.png)
 
 ## Índice:
 
