@@ -10,8 +10,8 @@ function Header() {
   const location = useLocation();
 
   const renderHeader = () => {
-    switch (location.pathname) {
-      case "/":
+    switch (true) {
+      case location.pathname === "/":
         return (
           <Flex justifyContent={"space-around"} alignItems={"center"}>
             <Image src={image} alt="image logo pokemon" />
@@ -22,7 +22,7 @@ function Header() {
               bg={"#33A4F5"}
               color={"white"}
               onClick={() => {
-                goToPokedex(navigate, "pokedex");
+                goToPokedex(navigate);
               }}
             >
               Pokédex
@@ -30,7 +30,7 @@ function Header() {
           </Flex>
         );
         break;
-      case "/details/:details":
+      case location.pathname.indexOf("details") > -1:
         return (
           <Flex justifyContent={"space-around"} alignItems={"center"}>
             <Button
@@ -60,7 +60,7 @@ function Header() {
           </Flex>
         );
         break;
-      case "/pokedex/:pokedex":
+      case location.pathname.indexOf("pokedex") > -1:
         return (
           <Flex justifyContent={"space-around"} alignItems={"center"}>
             <Button

@@ -12,8 +12,8 @@ function Poke() {
   return (
     <ChakraProvider>
       <Header />
-      <Heading color={"white"} bg={"#5d5d5d"} p={"2rem"} fontSize={"5xl"}>
-        Todos os Pokémons
+      <Heading color={"white"} bg={"#5d5d5d"} p={"2rem"} fontSize={"4xl"}>
+        Detalhes
       </Heading>
       <Flex
         justifyContent="center"

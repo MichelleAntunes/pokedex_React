@@ -11,8 +11,6 @@ function Home() {
   const { pokemon, grass, fire, bug, normal, pokedex } =
     useContext(PokemonContext);
 
-  // não mostrar pokemons que estão na pokedex
-
   const filteredPokelist = () =>
     pokemon.filter(
       (pokemonInList) =>
@@ -25,7 +23,7 @@ function Home() {
   return (
     <ChakraProvider>
       <Header />
-      <Heading color={"white"} bg={"#5d5d5d"} p={"2rem"} fontSize={"5xl"}>
+      <Heading color={"white"} bg={"#5d5d5d"} p={"2rem"} fontSize={"4xl"}>
         Todos os Pokémons
       </Heading>
       <Flex
@@ -35,9 +33,6 @@ function Home() {
         bg="#5d5d5d"
         theme={theme}
       >
-        {/* {pokemon.map((pokemons) => {
-          return <PokemonCard key={pokemons.data.id} pokemons={pokemons} />;
-        })} */}
         {filteredPokelist().map((pokemons) => (
           <>
             {pokemons.data.types.map((types) => {
