@@ -2,8 +2,8 @@ export const goHome = (navigate) => {
   navigate("/");
 };
 export const goToDetails = (navigate, idPokemon) => {
-  navigate(`/details/:${idPokemon}`);
+  navigate(`/details/${idPokemon}`);
 };
-export const goToPokedex = (navigate, id) => {
-  navigate(`/pokedex/:${id}`);
+export const goToPokedex = (navigate) => {
+  navigate(`/pokedex`);
 };

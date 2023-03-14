@@ -17,20 +17,10 @@ import theme from "../../theme/theme";
 
 function PokemonCard({ pokemons, img, bg }) {
   const location = useLocation();
-  const {
-    addToPokedex,
-    renderBg,
-    pokemon,
-    grass,
-    fire,
-    water,
-    bug,
-    normal,
-    removeFromPokedex,
-  } = useContext(PokemonContext);
+  const { addToPokedex, removeFromPokedex } = useContext(PokemonContext);
   const navigate = useNavigate();
-  // switch (pokemons.data.types.map)
 
+  // console.log(pokemons.data.id);
   return (
     <ChakraProvider theme={theme} resetCSS>
       <Grid
@@ -85,47 +75,6 @@ function PokemonCard({ pokemons, img, bg }) {
         </GridItem>
         <GridItem rowSpan={2} colSpan={3}>
           <Flex w={"12rem"} gap={"1rem"}>
-            {/* {pokemons.data.types.map((types, index) => {
-              return <div key={index}>{types.type.name}</div>;
-            })} */}
-            {/* {pokemons.data.types.map((types) => {
-              switch (types.type.name) {
-                case "grass":
-                  return <img src={grass} alt="img" />;
-                  break;
-                case "fire":
-                  return <img src={fire} alt="img" />;
-                  break;
-                case "water":
-                  return <img src={water} alt="img" />;
-                  break;
-                case "bug":
-                  return <img src={bug} alt="img" />;
-                  break;
-                case "normal":
-                  return <img src={normal} alt="img" />;
-                  break;
-              }
-            })} */}
-            {/* {pokemons.data.types.map((types) => {
-              switch (types[1].type.name) {
-                case "grass":
-                  return <img src={grass} alt="img" />;
-                  break;
-                case "fire":
-                  return <img src={fire} alt="img" />;
-                  break;
-                case "water":
-                  return <img src={water} alt="img" />;
-                  break;
-                case "bug":
-                  return <img src={bug} alt="img" />;
-                  break;
-                case "normal":
-                  return <img src={normal} alt="img" />;
-                  break;
-              }
-            })} */}
             <img src={img} alt="img" />
           </Flex>
         </GridItem>
@@ -134,7 +83,7 @@ function PokemonCard({ pokemons, img, bg }) {
             <Text as={"u"}>
               <a
                 onClick={() => {
-                  goToDetails(navigate, "details");
+                  goToDetails(navigate, pokemons.data.id);
                 }}
               >
                 Detalhes
@@ -161,8 +110,6 @@ function PokemonCard({ pokemons, img, bg }) {
                   Excluir
                 </Button>
               )}
-
-              {/* <button onClick={() => addToPokedex(pokemons)}>Capturar!</button> */}
             </Box>
           </Flex>
         </GridItem>

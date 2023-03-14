@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useState, useEffect, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import bug from "../assets/bug.png";
 import dark from "../assets/dark.png";
 import dragon from "../assets/dragon.png";
@@ -23,6 +24,7 @@ export const PokemonContext = createContext();
 const PokemonProvider = ({ children }) => {
   const [pokemon, setPokemon] = useState([]);
   const [pokedex, setPokedex] = useState([]);
+  const [details, setDetails] = useState([]);
 
   const getPokemon = () => {
     let pokemonPoint = [];
@@ -194,6 +196,8 @@ const PokemonProvider = ({ children }) => {
         bug,
         normal,
         getPokemon,
+
+        details,
       }}
     >
       {children}
